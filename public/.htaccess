@@ -2,7 +2,7 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
+    php_value memory_limit 2048M
     RewriteEngine On
 
     # Handle Authorization Header
