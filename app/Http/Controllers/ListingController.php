@@ -17,7 +17,7 @@ class ListingController extends Controller
 
     public function index() {
 
-        $lists = Listing::latest()->paginate(5000);
+        $lists = Listing::latest()->paginate(500);
         return [
             "status" => 1,
             "data" => $lists
