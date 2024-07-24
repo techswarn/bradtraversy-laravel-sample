@@ -9,20 +9,20 @@ use Illuminate\Validation\Rule;
 class ListingController extends Controller
 {
     //Show all listings
-    public function index() {
-        return view('listings.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
-        ]);
-    }
-
     // public function index() {
-
-    //     $lists = Listing::latest()->paginate(5000);
-    //     return [
-    //         "status" => 1,
-    //         "data" => $lists
-    //     ];
+    //     return view('listings.index', [
+    //         'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
+    //     ]);
     // }
+
+    public function index() {
+
+        $lists = Listing::latest()->paginate(5000);
+        return [
+            "status" => 1,
+            "data" => $lists
+        ];
+    }
 
     //Show single listing
     public function show(Listing $listing) {
